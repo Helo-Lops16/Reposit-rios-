@@ -5,8 +5,13 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 20px;  background: url("../../img/imagem-de-fundo.png")
+    padding: 20px;  
+}
 
+.bg-header{
+    background-color: #7FBFFF ;
+    display: flex;
+    justify-content: center;
 }
 
 
