@@ -8,6 +8,16 @@
     padding: 20px;  
 }
 
+body{
+    width: 1170px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px;  
+    flex-direction: row-reverse;
+}
+
 .bg-header{
     background-color: #7FBFFF ;
     display: flex;
@@ -15,3 +25,9 @@
 }
 
 
+a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    margin: 0 10px;
+}
