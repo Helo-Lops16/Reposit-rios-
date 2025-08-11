@@ -1,43 +1,64 @@
-
-.container {
-    width: 1170px;
-    max-width: 100%;
+body {
+    font-family: sans-serif;
+    background-color: #2c2c2c;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .pesquisar{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;  
-    margin: 0 auto;
-}
-
-.bg-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px; 
-    background-image: url("../img/download.jfif"); 
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat; 
-    width: 1200px;
-    max-width: 100%;
-}
-
-h1{
-    
-    font-size: 2.5rem;
-    color: #ffffff;
-    padding: 200px;
-}
-
-body{
-    background-color:#7FBFFF ;
-    font-family: monospace;
-    color:rgb(255, 255, 255);
-}
-
-a {
-    text-decoration: none;
-    color: #ffffff;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
+  
+  .pesquisar form {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .pesquisar label {
     font-weight: bold;
-    margin: 0 10px;
-}
+    margin-right: 10px;
+  }
+  
+  .pesquisar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #555;
+    color: #fff;
+  }
+  
+  .pesquisar input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  .pesquisar button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .pesquisar button:hover {
+    background-color: #0056b3;
+  }
+
+  
+  h1 {
+    color: #61dafb;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
