@@ -1,24 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html> 
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>Fandom Rick and Morty</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Rick & Morty Explorer</title>
 </head>
 <body>
-    <header class="bg-header">
-        <div class="container">
-            <h1>Rick and Morty</h1
-        </div>
+  <div class="app">
+    <header>
+      <h1>Rick & Morty Explorer</h1>
+      <p>Busque personagens</p>
+      <button>Atualizar</button>
     </header>
 
-    <section>
-        <h1> Veja os seus persoagens favoritos da série</h1>
-    </section>
+    <div class="pesquisar">
+        <form>
+          <input placeholder="Buscar por nome" />
+        </form>
+      
+        <form>
+          <label>Status:</label>
+          <input type="radio" id="status-todos" name="status" value="Todos" checked />
+          <label for="status-todos">Todos</label>
+          <input type="radio" id="status-alive" name="status" value="Alive" />
+          <label for="status-alive">Vivo</label>
+          <input type="radio" id="status-dead" name="status" value="Dead" />
+          <label for="status-dead">Morto</label>
+          <input type="radio" id="status-unknown" name="status" value="Unknown" />
+          <label for="status-unknown">Desconhecido</label>
+        </form>
+      
+        <form>
+          <label>Genero:</label>
+          <input type="radio" id="gender-all" name="gender" value="All" checked />
+          <label for="gender-all">Todos</label>
+          <input type="radio" id="gender-female" name="gender" value="Female" />
+          <label for="gender-female">Femenino</label>
+          <input type="radio" id="gender-male" name="gender" value="Male" />
+          <label for="gender-male">Masculino</label>
+          <input type="radio" id="gender-genderless" name="gender" value="Genderless" />
+          <label for="gender-genderless">Sem genero</label>
+          <input type="radio" id="gender-unknown" name="gender" value="Unknown" />
+          <label for="gender-unknown">Desconhecido</label>
+        </form>
+      
+        <form>
+          <label>Especie:</label>
+          <input type="radio" id="species-all" name="species" value="All" checked />
+          <label for="species-all">Todos</label>
+          <input type="radio" id="species-human" name="species" value="Human" />
+          <label for="species-human">Humano</label>
+          <input type="radio" id="species-alien" name="species" value="Alien" />
+          <label for="species-alien">Alien</label>
+          <input type="radio" id="species-humanoid" name="species" value="Humanoid" />
+          <label for="species-humanoid">Humanoide</label>
+          <input type="radio" id="species-robot" name="species" value="Robot" />
+          <label for="species-robot">Robo</label>
+          <input type="radio" id="species-cronenberg" name="species" value="Cronenberg" />
+          <label for="species-cronenberg">Cronenberg</label>
+        </form>
+      
+        <button>Limpar</button>
+      </div>
+    <main>
+      <div id="grid"></div>
+      <div id="empty">Nenhum personagem encontrado.</div>
+    </main>
 
-    <footer></footer>
-    <script src=".scripts/carrosel.js"></script>
-    <sc
+    <footer>Dados: <a href="https://rickandmortyapi.com/" target="_blank">rickandmortyapi.com</a></footer>
+  </div>
+
+  <div id="modalBackdrop">
+    <div>
+      <h2>Nome do Personagem</h2>
+      <div><strong>Status:</strong> <span></span></div>
+      <div><strong>Especie:</strong> <span></span></div>
+      <div><strong>Genero:</strong> <span></span></div>
+      <div><strong>Origem:</strong> <span></span></div>
+      <div><strong>Location:</strong> <span></span></div>
+      <div><strong>Episodios:</strong> <div></div></div>
+      <button>Fechar</button>
+    </div>
+  </div>
+
 </body>
 </html>
