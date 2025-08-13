@@ -6,6 +6,40 @@ const searchInput = document.querySelector('.pesquisar input[placeholder="Buscar
 const modal = document.getElementById('modalBackdrop');
 const modalContent = modal.querySelector('div');
 const closeModalBtn = modal.querySelector('button');
+const closeModalXBtn = document.getElementById('modalCloseX');
+
+function traduzirStatus(status) {
+  const traducoes = {
+    Alive: 'Vivo',
+    Dead: 'Morto',
+    unknown: 'Desconhecido'
+  };
+  return traducoes[status] || status;
+}
+
+function traduzirGenero(genero) {
+  const traducoes = {
+    Female: 'Feminino',
+    Male: 'Masculino',
+    Genderless: 'Sem Gênero',
+    unknown: 'Desconhecido'
+  };
+  return traducoes[genero] || genero;
+}
+
+function traduzirEspecie(especie) {
+  const traducoes = {
+    Human: 'Humano',
+    Alien: 'Alienígena',
+    Humanoid: 'Humanoide',
+    Robot: 'Robô',
+    Cronenberg: 'Cronenberg',
+    Animal: 'Animal',
+    Disease: 'Doença',
+    unknown: 'Desconhecido'
+  };
+  return traducoes[especie] || especie;
+}
 
 function getFilters() {
   return {
@@ -51,7 +85,7 @@ async function carregarPersonagens() {
       div.innerHTML = `
         <img src="${personagem.image}" alt="${personagem.name}" />
         <h3>${personagem.name}</h3>
-        <p>${personagem.species} - ${personagem.status}</p>
+        <p>${traduzirEspecie(personagem.species)} - ${traduzirStatus(personagem.status)}</p>
       `;
       div.addEventListener('click', () => mostrarModal(personagem));
       grid.appendChild(div);
@@ -65,12 +99,12 @@ async function carregarPersonagens() {
 
 function mostrarModal(personagem) {
   const spans = modal.querySelectorAll('span');
-  const episodiosDiv = modal.querySelector('div > div');
+  const episodiosDiv = document.getElementById('episodiosList');
 
   modalContent.querySelector('h2').textContent = personagem.name;
-  spans[0].textContent = personagem.status;
-  spans[1].textContent = personagem.species;
-  spans[2].textContent = personagem.gender;
+  spans[0].textContent = traduzirStatus(personagem.status);
+  spans[1].textContent = traduzirEspecie(personagem.species);
+  spans[2].textContent = traduzirGenero(personagem.gender);
   spans[3].textContent = personagem.origin.name;
   spans[4].textContent = personagem.location.name;
 
@@ -90,6 +124,9 @@ closeModalBtn.addEventListener('click', () => {
   modal.style.display = 'none';
 });
 
+closeModalXBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
 
 document.querySelectorAll('input').forEach(input => {
   input.addEventListener('change', carregarPersonagens);
@@ -97,8 +134,6 @@ document.querySelectorAll('input').forEach(input => {
 searchInput.addEventListener('input', carregarPersonagens);
 atualizarBtn.addEventListener('click', carregarPersonagens);
 
-
 window.limparSelecao = limparSelecao;
-
 
 carregarPersonagens();
